@@ -1,0 +1,19 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/furqanali945/namaste_react.git"
+  },
+  "author": "Syed Furqan Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/furqanali945/namaste_react/issues"
+  },
+  "homepage": "https://github.com/furqanali945/namaste_react#readme"
+}
