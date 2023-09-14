@@ -22,3 +22,42 @@ body {
     line-height: 28px;
     text-transform: capitalize;
 }
+.restaurant_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.search {
+    padding: 15px;
+}
+.restaurant_card {
+    padding: 15px;
+    box-shadow: 2px 2px 5px 0px #c8c8c8;
+}
+.restaurant_container .restaurant_card {
+    flex-basis: 20%;
+}
+.restaurant_card h4 {
+    text-align: center;
+}
+.restaurant_card img {
+    max-width: 200px;
+    margin: 0px auto;
+    display: table;
+}
+.card_meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 15px;
+    line-height: 26px;
+    justify-content: center;
+}
+
+.card_meta h6 {margin: 0px auto;}
+
+.card_meta h5 {
+    margin: 0px;
+}

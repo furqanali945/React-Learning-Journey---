@@ -10,12 +10,14 @@ import ReactDOM from "react-dom/client";
     - search component
     - Restaurant container
         - restaurant card
-            - img, restaurant name, star rating, cuisine
+            - img, restaurant name, star rating, cuisine, delivery time
 - footer component
     - copyright
     - links
     - Contact Info
  */
+
+//const styleCard = {backgroundColor: "lightgrey"}
 
 
 const Header = () => {
@@ -36,9 +38,21 @@ const Header = () => {
     )
 }
 
-const RestarauntCard = () => {
+//const RestaurantCard = (props) => {
+// with destrucing 
+const RestaurantCard = (props) => {
+    //console.log("",props);
+    const { resName, cusine, rating, time} = props;
     return(
-        <div></div>
+        <div className="restaurant_card" style={{backgroundColor: "lightgrey"}}>
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80" alt="Test Food"/>
+            <h4>{resName}</h4>
+            <div className="card_meta">
+                <h5>{cusine}</h5>
+                <h5>{rating}</h5>
+                <h5>{time}</h5>
+            </div>
+        </div>
     )
 }
 
@@ -49,7 +63,24 @@ const Body = () => {
                 Search
             </div>
             <div className="restaurant_container">
-                
+                <RestaurantCard 
+                    resName="Maghana Foods" 
+                    cusine="desi, asian" 
+                    rating="4.9" 
+                    time="50 mins"
+                />
+                <RestaurantCard 
+                    resName="KFC" 
+                    cusine="fast food" 
+                    rating="5" 
+                    time="39 mins"
+                />
+                <RestaurantCard 
+                    resName="Mcdonalds" 
+                    cusine="fast food" 
+                    rating="3" 
+                    time="40 mins"
+                />
             </div>
         </div>
     )
