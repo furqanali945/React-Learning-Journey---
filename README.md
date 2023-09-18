@@ -20,3 +20,18 @@
 - Htpps
 - Tree shaking - remove unused code for us.
 - Different build for dev and production.
+
+## Food Ordering System
+
+- Header Component
+  - logo component
+  - Nav items
+- Body Component
+  - search component
+  - Restaurant container
+    - restaurant card
+      - img, restaurant name, star rating, cuisine, delivery time
+- footer component
+  - copyright
+  - links
+  - Contact Info
