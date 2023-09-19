@@ -32,6 +32,18 @@
     - restaurant card
       - img, restaurant name, star rating, cuisine, delivery time
 - footer component
+
   - copyright
   - links
   - Contact Info
+
+  There are 2 types of export and import:
+
+  - Default export/import.
+
+    - export default component;
+    - import component from "path";
+
+  - Named export/import.
+    - export {component};
+    - import {component} from "path";
