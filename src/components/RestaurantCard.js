@@ -4,7 +4,6 @@ const RestaurantCard = ({
     cloudinaryImageId,
     name,
     cuisines,
-    area,
     avgRating,
   }) => {
     //console.log("",props);
@@ -16,7 +15,6 @@ const RestaurantCard = ({
             <div className="card_meta">
                 <h5>{cuisines.join(", ")}</h5>
                 <h5>{avgRating}</h5>
-                <h5>{area}</h5>
             </div>
         </div>
     )

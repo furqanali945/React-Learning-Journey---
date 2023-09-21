@@ -47,3 +47,10 @@
   - Named export/import.
     - export {component};
     - import {component} from "path";
+
+# React Hooks
+
+(Normal JS utility functions)
+
+- useState() (most important)
+- useEffect() (most important)
