@@ -52,5 +52,5 @@
 
 (Normal JS utility functions)
 
-- useState() (most important)
-- useEffect() (most important)
+- useState() - super powerful state variables in react
+- useEffect() -

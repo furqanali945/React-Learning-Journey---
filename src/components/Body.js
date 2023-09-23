@@ -1,39 +1,13 @@
 import RestaurantCard from "./RestaurantCard";
 import restaurantList from "../utils/mockdata";
+import { useState } from "react";
+import restaurantList from "../utils/mockdata";
 
 // body component
 const Body = () => {
-    let ListOfRestaurants = [
-        {
-            data: {  
-                id: "3456778",
-                name : "Dominos",
-                cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-                cuisines: [ "Burger", "american", "fast food"],
-                avgRating: "4.5"
-            }
-        },
-        {
-            data: {  
-                id: "3456745",
-                name : "KFC",
-                cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-                cuisines: [ "Burger", "american", "fast food"],
-                avgRating: "3.5"
-            }
-        },
-        {
-            data: {  
-                id: "3453745",
-                name : "MCD",
-                cloudinaryImageId: "bz9zkh2aqywjhpankb07",
-                cuisines: [ "Burger", "american", "fast food"],
-                avgRating: "4.1"
-            }
-        },
-    ];
 
-    console.log(ListOfRestaurants);
+    //local state variable 
+    const [ListOfRestaurants, setListOfRestaurants] = useState(restaurantList);
 
     return (
         <div className="body">
@@ -41,11 +15,10 @@ const Body = () => {
                <button className="btn-filter" 
                 onClick={() => {
                     // filter logic
-                    ListOfRestaurants = ListOfRestaurants.filter(
+                    const FilteredList = ListOfRestaurants.filter(
                         (res) => res.data.avgRating > 4
-                    )
-                    console.log("AFTER FILTRATION!:");
-                    console.log(ListOfRestaurants);
+                    );
+                    setListOfRestaurants(FilteredList);
                  }}>
                 Top Rated Restaurants
                 </button>
