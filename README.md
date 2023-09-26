@@ -78,3 +78,13 @@ provide single responsibility principle. Different team can confortably work on 
 - /sms -> 3000 - SMS
 - All these ports can be mapped to a domain name.
 - Now we will how our react app will explore different services.
+
+# 2 approaches to get data from the backend.
+
+- 1st approach When the app loads -> api -> render.
+- poor user experience.
+
+- 2nd approach load -> render -> api -> re render the data.
+- In react, we will always use 2nd approach. This is a better approach.
+- It will also give you better user experience.
+- React has best render mechanism so we shouldn't worry about re render in 2nd approach.
