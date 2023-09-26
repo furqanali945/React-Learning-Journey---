@@ -52,8 +52,9 @@
 
 (Normal JS utility functions)
 
-- useState() - super powerful state variables in react
-- useEffect() -
+- useState() - function provided by react - super powerful state variables in react
+- useEffect() - function provided by react - 2 arguments - 1st callback function - 2nd dependency array
+- If you want to do something after render you need to use useEffect.
 
 # Monolith & micro services architecture
 
