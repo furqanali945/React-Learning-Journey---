@@ -54,3 +54,27 @@
 
 - useState() - super powerful state variables in react
 - useEffect() -
+
+# Monolith & micro services architecture
+
+In monolith architecture, we have everything at the same place:
+
+- DB
+- API
+- UI Code
+- Authentication Code
+- OTP code etc
+
+In micro service we have different services for every parts together they form a big app. It provides separation of concern also
+provide single responsibility principle. Different team can confortably work on their service and different repo.
+
+## How are they deployed?
+
+- Suppose our react project is a Ui microservice.
+- You can have different tech stack for different service.
+- Just like our project it is deployed on 1234 port all the other services run on their own port.
+- / -> 1234 - UI
+- /api -> 1000 - BE
+- /sms -> 3000 - SMS
+- All these ports can be mapped to a domain name.
+- Now we will how our react app will explore different services.
