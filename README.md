@@ -89,3 +89,5 @@ provide single responsibility principle. Different team can confortably work on 
 - In react, we will always use 2nd approach. This is a better approach.
 - It will also give you better user experience.
 - React has best render mechanism so we shouldn't worry about re render in 2nd approach.
+
+## Look into shimmer UI and why we use it.

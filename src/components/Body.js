@@ -1,13 +1,13 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurantList from "../utils/mockdata";
 import { useEffect, useState } from "react";
-import restaurantList from "../utils/mockdata";
+import { SWIGGY_API_URL } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 // body component
 const Body = () => {
 
     //local state variable 
-    const [ListOfRestaurants, setListOfRestaurants] = useState(restaurantList);
+    const [ListOfRestaurants, setListOfRestaurants] = useState([]);
 
     useEffect(() => {
         fetchData();
@@ -16,12 +16,15 @@ const Body = () => {
     
     // making api call
     const fetchData = async () => {
-        const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        );
+        const data = await fetch(SWIGGY_API_URL);
         const json = await data.json();
-        console.log(json);
+        // optional chaining
+        setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
+
+    if(ListOfRestaurants.length === 0){
+        return <Shimmer></Shimmer>
+    }
 
 
     return (
@@ -31,7 +34,7 @@ const Body = () => {
                 onClick={() => {
                     // filter logic
                     const FilteredList = ListOfRestaurants.filter(
-                        (res) => res.data.avgRating > 4
+                        (res) => res.info.avgRating > 4
                     );
                     setListOfRestaurants(FilteredList);
                  }}>
@@ -40,7 +43,7 @@ const Body = () => {
             </div>
             <div className="restaurant_container">
                 {ListOfRestaurants.map((restaurant) => {
-                    return <RestaurantCard key={restaurant.data.id} {...restaurant.data} />;
+                    return <RestaurantCard key={restaurant.info.id} {...restaurant.info} />;
                 })}
             </div>
         </div>

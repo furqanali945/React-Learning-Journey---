@@ -22,7 +22,7 @@ body {
     line-height: 28px;
     text-transform: capitalize;
 }
-.restaurant_container {
+.restaurant_container, .shimmer_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -32,12 +32,19 @@ body {
 .search {
     padding: 15px;
 }
-.restaurant_card {
+.restaurant_card, .shimmer_card {
     padding: 15px;
     box-shadow: 2px 2px 5px 0px #c8c8c8;
 }
-.restaurant_container .restaurant_card {
+.restaurant_container .restaurant_card{
     flex-basis: 20%;
+}
+.shimmer_card{
+    height:100vh;
+    flex-basis: 20%;
+    padding: 15px;
+    box-shadow: 2px 2px 5px 0px #c8c8c8;
+    background-color: lightgrey;
 }
 .restaurant_card h4 {
     text-align: center;
