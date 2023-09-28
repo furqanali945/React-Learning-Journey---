@@ -39,12 +39,20 @@ body {
 .restaurant_container .restaurant_card{
     flex-basis: 20%;
 }
-.shimmer_card{
-    height:100vh;
+.shimmer_card {
+    background: -webkit-gradient(linear, left top, right top, from(#c2c2c2), to(#cacaca), color-stop(.5, #fff));
+    background: -moz-gradient(linear, left top, right top, from(#c2c2c2), to(#cacaca), color-stop(.5, #fff));
+    background: gradient(linear, left top, right top, from(#c2c2c2), to(#cacaca), color-stop(.5, #fff));
+    -moz-background-size: 125px 100%;
+    background-position: 0 0;
+    background-size: 125px 100%;
     flex-basis: 20%;
+    height: 100vh;
     padding: 15px;
-    box-shadow: 2px 2px 5px 0px #c8c8c8;
-    background-color: lightgrey;
+    animation-name: shimmer;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    box-shadow: 2px 2px 5px #c8c8c8;
 }
 .restaurant_card h4 {
     text-align: center;
@@ -75,3 +83,43 @@ button.btn-filter {
     padding: 15px;
     cursor: pointer;
 }
+
+/*** shimmer css ****/
+@-moz-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@-o-keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+            background-position: top left;
+    }
+    100% {
+            background-position: top right;
+    }
+}
+
+
+/*** shimmer end css ****/
