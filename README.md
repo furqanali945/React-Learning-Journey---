@@ -55,6 +55,7 @@
 - useState() - function provided by react - super powerful state variables in react
 - useEffect() - function provided by react - 2 arguments - 1st callback function - 2nd dependency array
 - If you want to do something after render you need to use useEffect.
+- Whenever a state variable changes such as useState react will re render the component so it can update the UI based on the updated value. You can't do this with normal variable as react will not know it has been changed and needs to re render.
 
 # Monolith & micro services architecture
 
