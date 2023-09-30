@@ -8,18 +8,21 @@ const Body = () => {
 
     //local state variable 
     const [ListOfRestaurants, setListOfRestaurants] = useState([]);
+    const [FilteredRestaurants, setFilteredRestaurants] = useState([]);
+
+    const [SearchRestaurants, setSearchRestaurants] = useState("");
 
     useEffect(() => {
         fetchData();
     }, []);
 
-    
     // making api call
     const fetchData = async () => {
         const data = await fetch(SWIGGY_API_URL);
         const json = await data.json();
         // optional chaining
         setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
     // conditional rendering
@@ -28,6 +31,17 @@ const Body = () => {
     ) : (
         <div className="body">
             <div className="filter">
+                <div className="search_form">
+                    <input type="text" className="search_box" value={SearchRestaurants} onChange={(e) =>{
+                        setSearchRestaurants(e.target.value);
+                    }} />
+                    <button className="btn_search" onClick={() => {
+                        const SearchFilterList = ListOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(SearchRestaurants.toLowerCase()));
+                        setFilteredRestaurants(SearchFilterList);
+                    }}
+                    >Search</button>
+                </div>
+
                <button className="btn-filter" 
                 onClick={() => {
                     // filter logic
@@ -40,7 +54,7 @@ const Body = () => {
                 </button>
             </div>
             <div className="restaurant_container">
-                {ListOfRestaurants.map((restaurant) => {
+                {FilteredRestaurants.map((restaurant) => {
                     return <RestaurantCard key={restaurant.info.id} {...restaurant.info} />;
                 })}
             </div>
