@@ -56,6 +56,10 @@
 - useEffect() - function provided by react - 2 arguments - 1st callback function - 2nd dependency array
 - If you want to do something after render you need to use useEffect.
 - Whenever a state variable changes such as useState react will re render the component so it can update the UI based on the updated value. You can't do this with normal variable as react will not know it has been changed and needs to re render.
+- useEffect() has only 1 mandatory requirmeent which is a callback function.
+- If the dependency array is not provided it will re render on every time the component renders.
+- If the dependency array is empty {} then it will only render once after the initial render.
+- If the dependency is provided in the array such as setButton then it will also re render when their is any change to that variable.
 
 # Monolith & micro services architecture
 
