@@ -96,3 +96,13 @@ provide single responsibility principle. Different team can confortably work on 
 - React has best render mechanism so we shouldn't worry about re render in 2nd approach.
 
 ## Look into shimmer UI and why we use it.
+
+We use shimmer Ui to provide something to the user and it improves the overall user experience.
+
+# Router in react
+
+- To be able use routing in react you can install the "react-router-dom" using NPM.
+- Also, your routes should be in the App.js file and you can create the routes using createBrowserRouter and it takes an array
+  of objects.
+- Also, you can make your own 404 page using errorElement: <Error /> in your createBrowserRouter App object.
+- Also, you can show better error messages on your 404 page using "useRouteError" hook in your error component.
