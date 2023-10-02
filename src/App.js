@@ -11,12 +11,14 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
 
 const AppLayout = () => {
     return (
         <div className="app">
             <AppHeader />
             <Outlet />
+            <Footer/>
         </div>
     )
 }
