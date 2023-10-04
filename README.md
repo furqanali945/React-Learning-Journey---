@@ -109,5 +109,7 @@ We use shimmer Ui to provide something to the user and it improves the overall u
 
 # Types of Routing in web application:
 
-- Client side routing
 - Server side routing
+  - In case of server side routing and we are navigation to other page such as about it it will fetch the about us page from server with a network call. The page is coming from server.
+- Client side routing
+  - In case of client side routing it doesn't make the server call after the initial call and the components only changes based on click such as in case of click on about us page.

@@ -1,5 +1,6 @@
 import { LOGO_URL } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const AppHeader = () => {
 
@@ -8,14 +9,20 @@ const AppHeader = () => {
     return (
         <div className="header">
             <div>
+            <Link to="/">
                 <img width="200px" src={LOGO_URL} />
+            </Link>
             </div>
             <div className="nav_items">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                    <li><a href="#">Cart</a></li>
+                    
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li><Link to="/about">About Us</Link></li>
+                    <li><Link to="/contact">Contact Us</Link></li>
+                    <li><Link to="#">Cart</Link></li>
+                    
                     <li>
                         <button className="btn_login" onClick={() => {
                                 IsloggedIn === "Login" 
