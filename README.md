@@ -106,3 +106,8 @@ We use shimmer Ui to provide something to the user and it improves the overall u
   of objects.
 - Also, you can make your own 404 page using errorElement: <Error /> in your createBrowserRouter App object.
 - Also, you can show better error messages on your 404 page using "useRouteError" hook in your error component.
+
+# Types of Routing in web application:
+
+- Client side routing
+- Server side routing
