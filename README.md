@@ -112,4 +112,9 @@ We use shimmer Ui to provide something to the user and it improves the overall u
 - Server side routing
   - In case of server side routing and we are navigation to other page such as about it it will fetch the about us page from server with a network call. The page is coming from server.
 - Client side routing
+
   - In case of client side routing it doesn't make the server call after the initial call and the components only changes based on click such as in case of click on about us page.
+
+  # Graphql
+
+  It basically helps you in fetching the right amount of data as you see when you make an api call you get a lot of data it basically solves the problem of over fetching data. It is the major purpose of GRAPHQL.
