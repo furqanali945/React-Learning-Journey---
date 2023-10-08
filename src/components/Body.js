@@ -4,29 +4,50 @@ import { SWIGGY_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
-// body component
 const Body = () => {
-
     //local state variable 
     const [ListOfRestaurants, setListOfRestaurants] = useState([]);
     const [FilteredRestaurants, setFilteredRestaurants] = useState([]);
-
     const [SearchRestaurants, setSearchRestaurants] = useState("");
 
+    // Fetch data from API
     useEffect(() => {
         fetchData();
     }, []);
 
     // making api call
     const fetchData = async () => {
-        const data = await fetch(SWIGGY_API_URL);
-        const json = await data.json();
+        try {
+            const data = await fetch(SWIGGY_API_URL);
+            const json = await data.json();
+            const restaurants =
+            json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+              ?.restaurants || [];
 
-        console.log(json);
+            // Optional chaining and nullish coalescing
+            setListOfRestaurants(restaurants);
+            setFilteredRestaurants(restaurants);
+            
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+        
+    };
 
-        // optional chaining
-        setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
-        setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || []);
+    // Filter restaurants based on search input
+    const handleSearch = () => {
+        const searchFilterList = ListOfRestaurants.filter((res) =>
+        res.info.name.toLowerCase().includes(SearchRestaurants.toLowerCase())
+        );
+        setFilteredRestaurants(searchFilterList);
+    };
+
+    // Filter top-rated restaurants
+    const handleFilterTopRated = () => {
+        const filteredList = ListOfRestaurants.filter(
+        (res) => res.info.avgRating > 4
+        );
+        setFilteredRestaurants(filteredList);
     };
 
     // Conditional rendering
@@ -34,42 +55,34 @@ const Body = () => {
         return <Shimmer />;
     }
 
-    return(
+    return (
         <div className="body">
-            <div className="filter">
-                <div className="search_form">
-                    <input type="text" className="search_box" value={SearchRestaurants} onChange={(e) =>{
-                        setSearchRestaurants(e.target.value);
-                    }} />
-                    <button className="btn_search" onClick={() => {
-                        const SearchFilterList = ListOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(SearchRestaurants.toLowerCase()));
-                        setFilteredRestaurants(SearchFilterList);
-                    }}
-                    >Search</button>
-                </div>
-
-               <button className="btn-filter" 
-                onClick={() => {
-                    // filter logic
-                    const FilteredList = ListOfRestaurants.filter(
-                        (res) => res.info.avgRating > 4
-                    );
-                    setListOfRestaurants(FilteredList);
-                 }}>
-                Top Rated Restaurants
-                </button>
+          <div className="filter">
+            <div className="search_form">
+              <input
+                type="text"
+                className="search_box"
+                value={SearchRestaurants}
+                onChange={(e) => setSearchRestaurants(e.target.value)}
+              />
+              <button className="btn_search" onClick={handleSearch}>
+                Search
+              </button>
             </div>
-            <div className="restaurant_container">
-                {FilteredRestaurants.map((restaurant) => {
-                    return (
-                    <Link to={"/restaurants/" + restaurant.info.id}>    
-                        <RestaurantCard key={restaurant.info.id} {...restaurant.info} />
-                    </Link>
-                    )
-                })}
-            </div>
+    
+            <button className="btn-filter" onClick={handleFilterTopRated}>
+              Top Rated Restaurants
+            </button>
+          </div>
+          <div className="restaurant_container">
+            {FilteredRestaurants.map((restaurant) => (
+              <Link to={`/restaurants/${restaurant.info.id}`} key={restaurant.info.id}>
+                <RestaurantCard {...restaurant.info} />
+              </Link>
+            ))}
+          </div>
         </div>
-    );
+      );
 }
 
 export default Body;

@@ -40,4 +40,4 @@ import { useParams } from "react-router-dom";
     )
 }
 
-export default RestaurantMenu
+export default RestaurantMenu;

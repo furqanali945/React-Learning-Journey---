@@ -6,11 +6,10 @@ const RestaurantCard = ({
     cuisines,
     avgRating,
   }) => {
-    //console.log("",props);
     
     return(
         <div className="restaurant_card" style={{backgroundColor: "lightgrey"}}>
-            <img src={COULDINARY_URL + cloudinaryImageId} alt="Test Food"/>
+            <img src={COULDINARY_URL + cloudinaryImageId} alt="Restaurant Image"/>
             <h4>{name}</h4>
             <div className="card_meta">
                 <h5>{cuisines.join(", ")}</h5>
