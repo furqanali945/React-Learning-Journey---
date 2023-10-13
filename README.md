@@ -60,6 +60,7 @@
 - If the dependency array is not provided it will re render on every time the component renders.
 - If the dependency array is empty {} then it will only render once after the initial render.
 - If the dependency is provided in the array such as setButton then it will also re render when their is any change to that variable.
+- Never update state variables directly like count = 2 etc.
 
 # Monolith & micro services architecture
 
@@ -118,3 +119,22 @@ We use shimmer Ui to provide something to the user and it improves the overall u
   # Graphql
 
   It basically helps you in fetching the right amount of data as you see when you make an api call you get a lot of data it basically solves the problem of over fetching data. It is the major purpose of GRAPHQL.
+
+  # Class Based Components
+
+  - For making a class based component work you need to first import React from "react".
+  - Secondly you need to use the key word "class" and your class will extend React.Component.
+  - For using props in your component you need to pass the props in constructor of your class.
+  - Also pass the props to super method of your class.
+  - Without passing it super method you will not be able to use your props in your component.
+  - lastly you need to use render method to return jsx and defining your state variables.
+  - Also, every state variable is defined in a object of "this.state" and there you can define your state variables like:
+    - this.state{
+      count: 0,
+      }
+  - You can de constructure your state variable in your render method by:
+    - const{count} = this.state;
+  - state is a reserved keyword in your class based component.
+  - To update a class based component's state you need to use this.setState() method where you pass the updated value for the state as we do in set function of a functional based component.
+
+  # Life cycle of class based component
