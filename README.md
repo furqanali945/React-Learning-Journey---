@@ -138,3 +138,20 @@ We use shimmer Ui to provide something to the user and it improves the overall u
   - To update a class based component's state you need to use this.setState() method where you pass the updated value for the state as we do in set function of a functional based component.
 
   # Life cycle of class based component
+
+  - First the constructor is called then render then componentDidMount is called.
+  - (Important question for interview) Incase of class based component when its sees a child component the lifecycle will be bit bit different and it is given below:
+    - Parent constructure -> parent render -> child constructure -> child render -> child did mount method -> parent did mount method.
+  - componentDidMount is used for making api calls.
+  - Why we make api call under componentDidMount?
+
+    - We want to quickly render the component and show something to user for better UX and later we make the api call same as we did in functional component using useEffect hook.
+
+  - Incase of 2 child the render cycle will be different to optimized it:
+
+    - Parent constructure -> parent render -> 1st child constructure -> 1st child render -> 2nd child constructure -> 2nd child render -> 1st child did mount -> 2nd child did mount -> parent did mount method. (It is happening because react batches the render phase for both children for efficiency and commit phase is happened together)
+    - Why react is batching the render phase because dom manipulation is a very expensive operation and it takes a lot of time.
+
+  - React mounting lifecycle is divided into two phases:
+    - render phase (constructure & render)
+    - commit phase (react updates the DOM & component did mount)
