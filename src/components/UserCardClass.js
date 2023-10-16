@@ -6,17 +6,26 @@ class UserCardClass extends React.Component{
         this.state = {
             count: 0,
         };
+
+        console.log("Child " + this.props.name + " constructor.");
     }
 
+    componentDidMount(){
+        console.log("Child " + this.props.name +  " componentDidMount.");
+    }
+    
     render(){
+        
         const {name} = this.props;
         const {count,count_2} = this.state;
+
+        console.log("Child "+ name +" render.");
 
         return(
             <div className="usercard">
                 <ul>
                     <li><button
-                        onClick={() => {
+                        onClick={()=> {
                             this.setState(
                                 {
                                     count: this.state.count + 1,
