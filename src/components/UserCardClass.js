@@ -3,38 +3,25 @@ import React from "react";
 class UserCardClass extends React.Component{
     constructor(props){
         super(props); // Call the constructor of the parent class (React.Component)
-        this.state = {
-            count: 0,
-        };
 
-        console.log("Child " + this.props.name + " constructor.");
+        // console.log("Child " + this.props.name + " constructor.");
     }
 
     componentDidMount(){
-        console.log("Child " + this.props.name +  " componentDidMount.");
+        // console.log("Child " + this.props.name +  " componentDidMount.");
     }
-    
+
     render(){
         
         const {name} = this.props;
-        const {count,count_2} = this.state;
 
         console.log("Child "+ name +" render.");
 
         return(
             <div className="usercard">
                 <ul>
-                    <li><button
-                        onClick={()=> {
-                            this.setState(
-                                {
-                                    count: this.state.count + 1,
-                                }
-                            )
-                        }}
-                    >Increase the Count</button></li>
                     <li>
-                        <strong>Name:</strong> {name} - {count} 
+                        <strong>Name:</strong> {name}
                     </li>
                     <li>
                        <strong>Github:</strong> @furqanali945
