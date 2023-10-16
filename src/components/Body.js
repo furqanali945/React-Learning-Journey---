@@ -21,7 +21,7 @@ const Body = () => {
             const data = await fetch(SWIGGY_API_URL);
             const json = await data.json();
             const restaurants =
-            json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+            json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
               ?.restaurants || [];
 
             // Optional chaining and nullish coalescing

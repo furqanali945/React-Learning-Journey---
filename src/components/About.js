@@ -20,6 +20,7 @@ class About extends React.Component{
                     <h2>Team Members</h2>
                     <UserCardClass name="1" />
                     <UserCardClass name="2" />
+                    <UserCardClass name="3" />
                     {/*
                     <UserCardClass name="Child 3 - Class Based Component" />
                     <UserCardClass name="Child 4 - Class Based Component" /> */}
