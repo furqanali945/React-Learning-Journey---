@@ -3,7 +3,6 @@ import React from "react";
 class UserCardClass extends React.Component{
     constructor(props){
         super(props); // Call the constructor of the parent class (React.Component)
-
         // console.log("Child " + this.props.name + " constructor.");
     }
 
@@ -13,13 +12,15 @@ class UserCardClass extends React.Component{
 
     render(){
         
-        const {name} = this.props;
-
-        console.log("Child "+ name +" render.");
+        const {name,location, avatar_url} = this.props;
+        //console.log("Child "+ name +" render.");
 
         return(
             <div className="usercard">
-                <ul>
+                <ul>    
+                    <li>
+                        <img src={avatar_url}></img>
+                    </li>
                     <li>
                         <strong>Name:</strong> {name}
                     </li>
@@ -27,6 +28,7 @@ class UserCardClass extends React.Component{
                        <strong>Github:</strong> @furqanali945
                     </li>
                     <li><strong>Designation:</strong> Senior Web Developer</li>
+                    <li><strong>Location:</strong> {location}</li>
                 </ul>
             </div>
         )
