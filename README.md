@@ -155,3 +155,8 @@ We use shimmer Ui to provide something to the user and it improves the overall u
   - React mounting lifecycle is divided into two phases:
     - render phase (constructure & render)
     - commit phase (react updates the DOM & component did mount)
+
+# Optimizing our App:
+
+- Single responsibility principle.
+- Our component should have single responsibility and we are making changes to RestaurantMenu.js component to make it based on single responsibility principle currently it is taking care of making API and displaying it rather it should only worry about showing data and a custom hook should be responsibility for making api call and returning data to it similar to setParam hook. With this approach our code will be more readable, maintable and testable.
