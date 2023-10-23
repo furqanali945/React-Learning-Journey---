@@ -6,7 +6,6 @@ const RestaurantMenu = () => {
 
     // const [MenuData, setMenuData] = useState(null);
     const { resId } = useParams();
-
     const MenuData = useMenuData(resId);
 
     if(MenuData ===  null){

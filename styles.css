@@ -17,6 +17,7 @@ body {
     display: flex;
     list-style: none;
     column-gap: 15px;
+    align-items: center;
 }
 .header ul li a {
     color: #000;
@@ -24,6 +25,13 @@ body {
     font-size: 18px;
     line-height: 28px;
     text-transform: capitalize;
+}
+li.status {
+    color: #000;
+    text-transform: capitalize;
+    font-size: 18px;
+    line-height: 28px;
+    text-decoration: none;
 }
 .nav_items button {
     color: #000;

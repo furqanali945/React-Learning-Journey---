@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { SWIGGY_API_URL } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     //local state variable 
@@ -49,6 +50,13 @@ const Body = () => {
         );
         setFilteredRestaurants(filteredList);
     };
+
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false)
+      return(
+        <h1>Looks like you are offline. Please check your internet connection!</h1>
+        );
 
     // Conditional rendering
     if (ListOfRestaurants.length === 0) {
