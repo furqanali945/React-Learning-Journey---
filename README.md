@@ -160,3 +160,10 @@ We use shimmer Ui to provide something to the user and it improves the overall u
 
 - Single responsibility principle.
 - Our component should have single responsibility and we are making changes to RestaurantMenu.js component to make it based on single responsibility principle currently it is taking care of making API and displaying it rather it should only worry about showing data and a custom hook should be responsibility for making api call and returning data to it similar to setParam hook. With this approach our code will be more readable, maintable and testable.
+
+## Chunking/Code spliting/Dynamic Bundling/lazy loading/ On demand loading/dynamic importing
+
+- To break down your apps and into small and managable chunks.
+- For using lazy loading in your react project you need to go to App.js and import lazy from react and it is a named import. Also you will not import your components as you normally do rather you will make a variable and use a function as lazy and pass your component in a call back function. Suppose we have a component as Grocery:
+- Also, you need to import a component from react "Suspense" it will allow you to add fallback so that something is shown when the loading is done for the component.
+- const Grocery = lazy(() => import("path to your component"));
