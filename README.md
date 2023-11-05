@@ -167,3 +167,14 @@ We use shimmer Ui to provide something to the user and it improves the overall u
 - For using lazy loading in your react project you need to go to App.js and import lazy from react and it is a named import. Also you will not import your components as you normally do rather you will make a variable and use a function as lazy and pass your component in a call back function. Suppose we have a component as Grocery:
 - Also, you need to import a component from react "Suspense" it will allow you to add fallback so that something is shown when the loading is done for the component.
 - const Grocery = lazy(() => import("path to your component"));
+- A bundle should have enough code to hold a major feature.
+
+# Checking various styling ways in React.js
+
+- By adding index.css file and using it in the project as a single styling file.
+- By using Sass/Scss (Writing css with some super powers and little advance and easy way). They don't scale well company don't use them in production apps.
+- Styled components in react.
+- CSS framework: There are a lot of alternatives(Material UI (very popular), bootstrap, ant design, chakra UI, tailwind) (You get pre built components with styling)
+- Latest framework and gaining a lot of attraction that is tailwind and we will use it.
+
+# Tailwind CSS:
