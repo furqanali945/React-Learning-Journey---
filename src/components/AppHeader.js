@@ -11,14 +11,14 @@ const AppHeader = () => {
     console.log(onlineStatus);
 
     return (
-        <div className="header">
+        <div className="header flex justify-between items-center bg-pink-100 shadow-lg p-5">
             <div>
-            <Link to="/">
-                <img width="200px" src={LOGO_URL} />
-            </Link>
+                <Link to="/">
+                    <img width="200px" className="w-56" src={LOGO_URL} />
+                </Link>
             </div>
             <div className="nav_items">
-                <ul>
+                <ul className="flex gap-10">
                     <li className="status">Internet Status: 
                         <strong>
                             {onlineStatus ? <span style={{ color: "green" }}>Online</span> : <span style={{ color: "red" }}>Offline</span>}
