@@ -8,10 +8,10 @@ const RestaurantCard = ({
   }) => {
     
     return(
-        <div className="restaurant_card" style={{backgroundColor: "lightgrey"}}>
+        <div className="restaurant_card ">
             <img src={COULDINARY_URL + cloudinaryImageId} alt="Restaurant Image"/>
-            <h4>{name}</h4>
-            <div className="card_meta">
+            <h4 className="p-2 text-xl text-center">{name}</h4>
+            <div className="card_meta p-2 text-center">
                 <h5>{cuisines.join(", ")}</h5>
                 <h5>{avgRating}</h5>
             </div>
