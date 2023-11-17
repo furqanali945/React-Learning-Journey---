@@ -177,4 +177,16 @@ We use shimmer Ui to provide something to the user and it improves the overall u
 - CSS framework: There are a lot of alternatives(Material UI (very popular), bootstrap, ant design, chakra UI, tailwind) (You get pre built components with styling)
 - Latest framework and gaining a lot of attraction that is tailwind and we will use it.
 
-# Tailwind CSS:
+# Tailwind CSS PROS and CONS:
+
+Use tailwind then make a opinion about it. Here are some pros and cons:
+
+## Pros:
+
+- You don't have to move from file to file to update css.
+- Very light weight. When the parcel is bundling it will only includes styles which are used and needed for our app.
+
+## Cons:
+
+- You have to write a lot of classes and it will make your code look messy.
+- It comes with a initial learning curve.
